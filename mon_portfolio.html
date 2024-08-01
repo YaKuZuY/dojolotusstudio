@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_dls_portfolio.css">
+    <link rel="stylesheet" href="style_dls.css">
+
+    <title>Mon Portfolio - Anthony Nguyen - UI/Web Designer</title>
+
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alkatra:wght@400..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="header_top">
+            <div class="header_top_1-3">
+                <h1>NGUYEN ANTHONY - UI / WEB DESIGNER</h1>
+                <a href="http://www.linkedin.com/in/anthony-nguyen-18a50624b"><img
+                        src="assets/img/logo_social/linkedin.svg" alt="Logo LinkedIn"></a>
+                <a href="http://www.linkedin.com/in/anthony-nguyen-18a50624b"><img
+                        src="assets/img/logo_social/slack.svg" alt="Logo Discord"></a>
+                <a href="http://www.linkedin.com/in/anthony-nguyen-18a50624b"><img
+                        src="assets/img/logo_social/discord.svg" alt="Logo Slack"></a>
+            </div>
+            <div class="header_top_2-3">
+                <a href="/index.html"><img src="assets/img/logo_dls/logo_dls_header.svg"
+                        alt="Logo Dojo Lotus Studio"></a>
+            </div>
+            <div class="header_top_3-3">
+                <button><b>DEVIS GRATUIT</b></button>
+            </div>
+        </div>
+        <div class="header_menu">
+            <li><a href="/mes_services.html">Mes Services</a></li>
+            <li><a href="/mon_portfolio.html">Mon Portfolio</a></li>
+            <li><a href="/a_propos.html">À Propos</a></li>
+        </div>
+    </header>
+    <main>
+        <div class="portfolio">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-category="tout"
+                    onclick="filterProjects('tout')"><b>Tout</b></button>
+                <button class="filter-btn" data-category="tag-site-web"
+                    onclick="filterProjects('tag-site-web')"><b>Web</b></button>
+                <button class="filter-btn" data-category="tag-maquettage"
+                    onclick="filterProjects('tag-maquettage')"><b>Maquettage</b></button>
+                <button class="filter-btn" data-category="tag-branding"
+                    onclick="filterProjects('tag-branding')"><b>Branding</b></button>
+                <button class="filter-btn" data-category="tag-graphisme"
+                    onclick="filterProjects('tag-graphisme')"><b>Graphisme</b></button>
+            </div>
+            <div class="gallery">
+                <div class="projet_vignette tag-graphisme project-20" id="marge_left">
+                    <img src="https://www.dojolotusstudio.com/wp-content/uploads/2024/07/escape_game.png"
+                        alt="Projet 20">
+                </div>
+                <div class="projet_vignette tag-site-web tag-maquettage tag-branding tag-graphisme project-19"
+                    id="marge_projet">
+                    <img src="https://www.dojolotusstudio.com/wp-content/uploads/2024/07/reroles_animation.png"
+                        alt="Projet 19">
+                </div>
+                <div class="projet_vignette tag-maquettage project-18" id="marge_right">
+                    <img src="https://www.dojolotusstudio.com/wp-content/uploads/2024/07/muvitram.png" alt="Projet 18">
+                </div>
+                <div class="projet_vignette tag-site-web tag-maquettage project-17" id="marge_projet">
+                    <img src="https://www.dojolotusstudio.com/wp-content/uploads/2024/07/fees_de_maud.png"
+                        alt="Projet 17">
+                </div>
+                <div class="projet_vignette tag-maquettage project-16" id="marge_projet">
+                    <img src="https://www.dojolotusstudio.com/wp-content/uploads/2024/07/bio_juice.png" alt="Projet 16">
+                </div>
+                <div class="projet_vignette tag-graphisme project-15" id="marge_projet">
+                    <img src="https://www.dojolotusstudio.com/wp-content/uploads/2024/07/match_color.png"
+                        alt="Projet 15">
+                </div>
+                <div class="projet_vignette tag-graphisme project-14" id="marge_projet">
+                    <img src="https://www.dojolotusstudio.com/wp-content/uploads/2024/07/Projet-Match-Color-2-Defi-Okprod.png"
+                        alt="Projet 14">
+                </div>
+                <div class="projet_vignette tag-branding tag-graphisme project-13">
+                    <img src="https://www.dojolotusstudio.com/wp-content/uploads/2024/07/drinky.png" alt="Projet 13">
+                </div>
+                <div class="projet_vignette tag-graphisme project-12" id="marge_projet">
+                    <img src="https://www.dojolotusstudio.com/wp-content/uploads/2024/07/animal_minimaliste.png"
+                        alt="Projet 12">
+                </div>
+                <div class="projet_vignette tag-site-web tag-maquettage tag-branding project-11" id="marge_projet">
+                    <img src="https://www.dojolotusstudio.com/wp-content/uploads/2024/07/walk_or_run.png"
+                        alt="Projet 11">
+                </div>
+                <div class="projet_vignette tag-graphisme project-10" id="marge_projet">
+                    <img src="https://www.dojolotusstudio.com/wp-content/uploads/2024/07/banniere_mobile.png"
+                        alt="Projet 10">
+                </div>
+                <div class="projet_vignette tag-graphisme project-9" id="marge_projet">
+                    <img src="https://www.dojolotusstudio.com/wp-content/uploads/2024/07/affiche_film.png"
+                        alt="Projet 9">
+                </div>
+                <div class="projet_vignette tag-graphisme project-8" id="marge_projet">
+                    <img src="https://www.dojolotusstudio.com/wp-content/uploads/2024/07/carte_de_visite.png"
+                        alt="Projet 8">
+                </div>
+                <div class="projet_vignette tag-graphisme project-7" id="marge_projet">
+                    <img src="https://www.dojolotusstudio.com/wp-content/uploads/2024/07/carte_pokemon.png"
+                        alt="Projet 7">
+                </div>
+                <div class="projet_vignette tag-site-web tag-maquettage project-6" id="marge_projet">
+                    <img src="https://www.dojolotusstudio.com/wp-content/uploads/2024/07/yjlh.png" alt="Projet 6">
+                </div>
+                <div class="projet_vignette tag-site-web tag-maquettage tag-branding tag-graphisme project-5"
+                    id="marge_projet">
+                    <img src="https://www.dojolotusstudio.com/wp-content/uploads/2024/07/dls_version_1.png"
+                        alt="Projet 5">
+                </div>
+                <div class="projet_vignette tag-graphisme project-4" id="marge_projet">
+                    <img src="https://www.dojolotusstudio.com/wp-content/uploads/2024/07/mathilde.png" alt="Projet 4">
+                </div>
+                <div class="projet_vignette tag-graphisme project-3" id="marge_projet">
+                    <img src="https://www.dojolotusstudio.com/wp-content/uploads/2024/07/minions_et_lapins_cretins.png"
+                        alt="Projet 3">
+                </div>
+                <div class="projet_vignette tag-graphisme project-2" id="marge_projet">
+                    <img src="https://www.dojolotusstudio.com/wp-content/uploads/2024/07/dessins_divers.png"
+                        alt="Projet 2">
+                </div>
+                <div class="projet_vignette tag-site-web project-1" id="marge_projet">
+                    <img src="https://www.dojolotusstudio.com/wp-content/uploads/2024/07/cool_travel_train.png"
+                        alt="Projet 1">
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="scripts.js"></script>
+</body>
+
+
+
+<footer>
+    <div class="footer_1-3">
+        <div class="footer_1-3_container">
+            <h4>PLAN DU SITE</h4>
+            <li><a href="/mes_services.html">Mes Services</a></li>
+            <li><a href="/mon_portfolio.html">Mon Portfolio</a></li>
+            <li><a href="/a_propos.html">À Propos</a></li>
+        </div>
+    </div>
+    <div class="footer_2-3">
+        <div class="">
+            <a href="/index.html"><img src="/assets/img/logo_dls/logo_dls_footer.webp" alt="logo_dls_footer"></a>
+            <p>Copyright © 2024 - Dōjō Lotus Studio - Anthony Nguyen - Tous droits réservés</p>
+        </div>
+    </div>
+    <div class="footer_3-3">
+        <div class="footer_3-3_container">
+            <h4>INFORMATIONS</h4>
+            <li><a href="/les_mentions_legales.html">Les Mentions Légales</a></li>
+            <li><a href="/la_politique_de_confidentialite.html">La Politique de confidentialité</a></li>
+            <li><a href="/la_gestion_des_cookies.html">La Gestion des Cookies</a></li>
+        </div>
+    </div>
+</footer>
+
+</html>

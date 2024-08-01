@@ -1,0 +1,668 @@
+@charset "UTF-8";
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: black;
+  background-color: gray;
+  font-family: "Be Vietnam Pro";
+  margin: 0;
+  background-image: url(/assets/img/background_dls_2024\ copie.webp);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Alkatra";
+}
+
+header {
+  margin: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  font-size: 16px;
+  line-height: 150%;
+}
+
+/*--- HEADER ---*/
+header .header_top {
+  height: 60px;
+  background-color: #000000;
+  padding-left: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.header_top_1-3 {
+  width: 33.33%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.header_top_1-3 img {
+  height: auto;
+  width: 20px;
+}
+
+.header_top_2-3 {
+  width: 33.33%;
+  text-align: center;
+}
+
+.header_top_3-3 {
+  width: 33.33%;
+  padding-right: 40px;
+  text-align: right;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 10px 30px;
+  font-size: 14px;
+  color: #000;
+  background: linear-gradient(to right, #F9E1A6, #F9E1A6);
+  text-align: center;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:hover {
+  background: linear-gradient(to right, #F9E1A6, #FFFFFF);
+  transform: scale(1.03);
+}
+
+.cta-button i {
+  margin-right: 8px;
+}
+
+/*--- MENU ---*/
+.header_menu {
+  height: 40px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  text-transform: uppercase;
+}
+
+.header_menu a {
+  color: #000000;
+  font-size: 14px;
+  width: 100%;
+  height: 100%;
+  line-height: 1.2;
+  display: block;
+  box-sizing: border-box;
+}
+
+.header_menu a:hover {
+  background: url("/assets/img/déco_bouton/deco_1_bouton.svg") left 0/22px 22px no-repeat, url("/assets/img/déco_bouton/deco_2_bouton.svg") right bottom/22px 22px no-repeat;
+}
+
+.header_menu li {
+  width: 160px;
+  text-align: center;
+}
+
+/*--- PAGINATION ---*/
+.pagination-nav {
+  position: fixed;
+  top: 40vh;
+  left: 30px;
+  z-index: 100;
+}
+
+.link-nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.hover-link-menu {
+  display: none;
+  background: rgba(0, 0, 0, 0.3725490196);
+  margin: 0;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+.hover-link-menu p {
+  margin: 0;
+}
+
+.pagination-nav a {
+  display: block;
+  margin: 10px 0;
+  color: #000;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #F9E1A6;
+  rotate: 45deg;
+}
+
+.link-nav a:hover + .hover-link-menu {
+  display: block;
+}
+
+.pagination-nav a:hover,
+.pagination-nav a.active {
+  background-color: #AC529C;
+}
+
+/*--- TOP BUTTON ---*/
+.div_top_button {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Fixed/sticky position */
+  /* Fixed/sticky position */
+  bottom: 30px;
+  /* Place the button at the bottom of the page */
+  right: 30px;
+  /* Place the button 30px from the right */
+  z-index: 99;
+  text-align: center;
+}
+
+.div_top_button p {
+  margin-top: -2px;
+}
+
+.top-button {
+  width: 30px;
+  height: 30px;
+  bottom: 30px;
+  /* Place the button at the bottom of the page */
+  right: 30px;
+  /* Place the button 30px from the right */
+  z-index: 99;
+  /* Make sure it does not overlap */
+  border: none;
+  /* Remove borders */
+  outline: none;
+  /* Remove outline */
+  background-image: url(/assets/img/top_button/top_button_01.webp);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
+  cursor: pointer;
+  /* Add a mouse pointer on hover */
+}
+
+.top-button:hover {
+  background-image: url(/assets/img/top_button/top_button_02.webp);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
+}
+
+h1 {
+  font-size: 14px;
+  color: #FFFFFF;
+}
+
+p {
+  color: #FFFFFF;
+}
+
+/*--- SECTION HERO ---*/
+.hero {
+  display: flex;
+  color: #FFFFFF;
+  align-items: center;
+}
+
+.photo_hero {
+  width: 50%;
+  text-align: left;
+  padding-top: 50px;
+}
+
+.description_hero {
+  text-align: center;
+}
+
+.description_hero p,
+li {
+  text-align: left;
+}
+
+h2 {
+  font-size: 50px;
+  background: linear-gradient(to right, #F9E1A6, #FFFFFF);
+  /* Dégradé linéaire */
+  -webkit-background-clip: text;
+  /* Clip le fond au texte pour Webkit */
+  background-clip: text;
+  /* Clip le fond au texte standard */
+  -webkit-text-fill-color: transparent;
+  /* Remplit le texte avec la couleur du fond pour Webkit */
+  color: transparent;
+  /* Remplit le texte avec la couleur du fond standard */
+  text-align: center;
+}
+
+/*--- SECTION PRÉSENTATION ---*/
+.presentation {
+  height: 200px;
+  padding: 100px 400px 100px 400px;
+}
+
+.image {
+  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+          mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
+
+/*--- SECTION SERVICES PROPOSÉS ---*/
+.services_proposes {
+  color: #FFFFFF;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 50px 50px 100px 50px;
+  background-color: rgba(0, 0, 0, 0.4470588235);
+}
+
+.services_proposes h3 {
+  color: #FFFFFF;
+  font-size: 30px;
+  text-align: left;
+  padding-left: 350px;
+}
+
+.mes_services {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  gap: 20px;
+}
+
+.services_1_2,
+.services_3_4 {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.service {
+  text-align: center;
+  width: 49.5%;
+  height: auto;
+  border: 1px solid #F9E1A6;
+  border-radius: 10px;
+}
+
+/*--- SECTION DERNIERS PROJETS ---*/
+.dernier_projet {
+  padding: 100px 400px;
+}
+
+.dernier_projet h3 {
+  color: #FFFFFF;
+  font-size: 30px;
+}
+
+.derniers_projets_grid {
+  margin: auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 900px;
+  height: 670px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 270px 100px;
+  grid-auto-flow: row;
+  grid-template-areas: ". project-1 project-1 ." "project-2 project-2 project-3 project-3" ". project-4 project-4 .";
+}
+.derniers_projets_grid .dernier_projet_1 {
+  width: 400px;
+  height: auto;
+  justify-content: center;
+  grid-area: 1/2/3/4;
+}
+.derniers_projets_grid .dernier_projet_2 {
+  width: 400px;
+  height: auto;
+  grid-area: 2/1/4/3;
+}
+.derniers_projets_grid .dernier_projet_3 {
+  width: 400px;
+  height: auto;
+  grid-area: 2/3/4/5;
+}
+.derniers_projets_grid .button_last_projet {
+  height: 45px;
+  display: flex;
+  margin-top: 90px;
+  justify-content: center;
+  align-items: end;
+  grid-area: 3/2/5/4;
+}
+.derniers_projets_grid .button_last_projet a {
+  color: black;
+}
+
+.derniers_projets h3 {
+  color: #FFFFFF;
+  font-size: 30px;
+}
+
+.derniers_projets_grid img {
+  width: 400px;
+  background-size: cover;
+  cursor: pointer;
+  -webkit-clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+          clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+}
+
+.content-default-1,
+.content-hover-1,
+.content-default-2,
+.content-hover-2,
+.content-default-3,
+.content-hover-3 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  -webkit-clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+          clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+  transition: opacity 0.3s ease;
+}
+
+.dernier_projet_vignette {
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+
+.content-hover-1,
+.content-hover-2,
+.content-hover-3 {
+  opacity: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.content-hover-3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-clip-path: inherit;
+          clip-path: inherit;
+  /* Hérite du clip-path de l'élément parent */
+  border: 2px solid #000;
+  /* Bordure noire */
+  box-sizing: border-box;
+  /* Inclut la bordure dans les dimensions de l'élément */
+  pointer-events: none;
+  /* Assure que les événements de la souris passent à travers */
+}
+
+.content-hover-1 h4,
+.content-hover-2 h4,
+.content-hover-3 h4 {
+  font-size: 30px;
+}
+
+.content-hover-1 a,
+.content-hover-2 a,
+.content-hover-3 a {
+  color: #AC529C;
+}
+
+.dernier_projet_vignette:hover .content-hover-1,
+.dernier_projet_vignette:hover .content-hover-2,
+.dernier_projet_vignette:hover .content-hover-3 {
+  opacity: 1;
+  z-index: 0;
+}
+
+.dernier_projet_vignette:hover .content-default-1,
+.dernier_projet_vignette:hover .content-default-2,
+.dernier_projet_vignette:hover .content-default-3 {
+  opacity: 0.5;
+}
+
+.tag,
+.bouton_dernier_projet {
+  height: 35%;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+}
+
+.titre_projet {
+  height: 10%;
+  color: #F9E1A6;
+  display: flex;
+  align-items: center;
+}
+
+/*--- SECTIONS CLIENTS ---*/
+.clients {
+  color: #FFFFFF;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 100px 400px 100px 400px;
+  background-color: #000;
+}
+
+.clients img {
+  height: 100px;
+  width: auto;
+}
+
+.clients h3 {
+  font-size: 30px;
+  text-align: left;
+}
+
+.clients a {
+  color: #F9E1A6;
+}
+
+/*--- SECTIONS CONTACT ---*/
+.contact {
+  padding: 100px 200px 100px 200px;
+  display: flex;
+}
+
+.contact h3 {
+  color: #FFFFFF;
+  font-size: 30px;
+  margin: 0;
+}
+
+.contact h4 {
+  color: #FFFFFF;
+  font-size: 24px;
+}
+
+.photo_2 {
+  width: 40%;
+  height: auto;
+}
+
+.photo_2 img {
+  width: 400px;
+  -webkit-mask-image: radial-gradient(circle, rgb(0, 0, 0) 50%, rgba(0, 0, 0, 0) 100%);
+  mask-image: radial-gradient(circle, rgb(0, 0, 0) 50%, rgba(0, 0, 0, 0) 100%);
+}
+
+.description_qui_suis_je {
+  width: 60%;
+  padding: 20px 60px;
+}
+
+.coordonnees {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 25px;
+}
+
+.coordonnees a {
+  background: linear-gradient(to right, #F9E1A6, #F9E1A6);
+  /* Dégradé linéaire */
+  -webkit-background-clip: text;
+  /* Clip le fond au texte pour Webkit */
+  background-clip: text;
+  /* Clip le fond au texte standard */
+  -webkit-text-fill-color: transparent;
+  /* Remplit le texte avec la couleur du fond pour Webkit */
+  color: transparent;
+  /* Remplit le texte avec la couleur du fond standard */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.coordonnees a:hover {
+  background: linear-gradient(to right, #F9E1A6, #FFFFFF);
+  /* Dégradé linéaire */
+  -webkit-background-clip: text;
+  /* Clip le fond au texte pour Webkit */
+  background-clip: text;
+  /* Clip le fond au texte standard */
+  -webkit-text-fill-color: transparent;
+  /* Remplit le texte avec la couleur du fond pour Webkit */
+  color: transparent;
+  /* Remplit le texte avec la couleur du fond standard */
+  transform: scale(1.03);
+}
+
+/*--- FOOTER ---*/
+footer {
+  display: flex;
+  color: #FFFFFF;
+  background-color: #000000;
+  align-items: center;
+  text-align: center;
+  padding: 20px 0px;
+  line-height: 150%;
+}
+
+footer a {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+footer a:hover {
+  color: #F9E1A6;
+}
+
+footer h4 {
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+.footer_reseaux_sociaux {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  padding: 0;
+}
+
+.footer_reseaux_sociaux img {
+  width: 20px;
+  height: 100%;
+}
+
+.footer_1-3 {
+  width: 33.33%;
+}
+
+.footer_1-3_container {
+  text-align: left;
+  padding-left: 160px;
+}
+
+.footer_2-3 {
+  width: 33.33%;
+}
+
+.footer_3-3 {
+  width: 33.33%;
+  text-align: right;
+}
+
+.footer_3-3_container {
+  text-align: right;
+  padding-right: 160px;
+}
+
+.footer_3-3_container li {
+  text-align: right;
+}
+
+/*--- PAGES INFORMATIONS LÉGALES ---*/
+.mentions,
+.confidentialite,
+.cookies {
+  padding: 100px 0;
+  color: #FFFFFF;
+  width: 50%;
+  margin: 0 25%;
+}
+
+.mentions h2,
+.confidentialite h2,
+.cookies h2 {
+  text-align: center;
+  color: #F9E1A6;
+  font-size: 50px;
+}
+
+.mentions h3,
+.confidentialite h3,
+.cookies h3 {
+  padding-top: 40px;
+}
+
+.mentions a,
+.confidentialite a,
+.cookies a {
+  color: #FFFFFF;
+}
+
+.mentions a:hover,
+.confidentialite a:hover,
+.cookies a:hover {
+  color: #F9E1A6;
+}/*# sourceMappingURL=style_dls.css.map */
