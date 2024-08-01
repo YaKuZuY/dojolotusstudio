@@ -93,7 +93,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Highlight active link
     window.addEventListener('scroll', function () {
         let fromTop = window.scrollY + 20;
-        let lastSection = false;
 
         links.forEach(link => {
             let section = document.querySelector(link.getAttribute('href'));
@@ -102,19 +101,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 section.offsetTop + section.offsetHeight > fromTop
             ) {
                 link.classList.add('active');
-                lastSection = true;
             } else {
                 link.classList.remove('active');
             }
         });
-
-        // If no section is found active, it means the last section should be active
-        if (!lastSection) {
-            let lastLink = links[links.length - 1];
-            let lastSectionElement = document.querySelector(lastLink.getAttribute('href'));
-            if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-                lastLink.classList.add('active');
-            }
-        }
     });
 });

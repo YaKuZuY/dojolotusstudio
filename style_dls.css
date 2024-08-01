@@ -8,7 +8,7 @@ body {
   background-color: gray;
   font-family: "Be Vietnam Pro";
   margin: 0;
-  background-image: url(/assets/img/background_dls_2024\ copie.webp);
+  background-image: url(/assets/img/bg/background_dls.png);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
@@ -207,7 +207,7 @@ header .header_top {
   /* Remove borders */
   outline: none;
   /* Remove outline */
-  background-image: url(/assets/img/top_button/top_button_01.webp);
+  background-image: url(/assets/img/top_button/top_button_01.png);
   background-repeat: no-repeat;
   background-size: contain;
   background-color: transparent;
@@ -216,12 +216,13 @@ header .header_top {
 }
 
 .top-button:hover {
-  background-image: url(/assets/img/top_button/top_button_02.webp);
+  background-image: url(/assets/img/top_button/top_button_02.png);
   background-repeat: no-repeat;
   background-size: contain;
   background-color: transparent;
 }
 
+/*--------*/
 h1 {
   font-size: 14px;
   color: #FFFFFF;
@@ -242,6 +243,10 @@ p {
   width: 50%;
   text-align: left;
   padding-top: 50px;
+}
+
+.photo_hero img {
+  width: 80%;
 }
 
 .description_hero {
