@@ -124,7 +124,7 @@ header .header_top {
 }
 
 .header_menu a:hover {
-    background: url("assets/img/déco_bouton/deco_1_bouton.svg") left 0/22px 22px no-repeat, url("assets/img/déco_bouton/deco_2_bouton.svg") right bottom/22px 22px no-repeat;
+    background: url('assets/img/déco_bouton/deco_1_bouton.svg') left 0/22px 22px no-repeat, url('assets/img/déco_bouton/deco_2_bouton.svg') right bottom/22px 22px no-repeat;
 }
 
 .header_menu li {
@@ -216,7 +216,7 @@ header .header_top {
     /* Remove borders */
     outline: none;
     /* Remove outline */
-    background-image: url('/assets/img/top_button/top_button_01.webp');
+    background-image: url('assets/img/top_button/top_button_01.webp');
     background-repeat: no-repeat;
     background-size: contain;
     background-color: transparent;
@@ -225,7 +225,7 @@ header .header_top {
 }
 
 .top-button:hover {
-    background-image: url('/assets/img/top_button/top_button_02.webp');
+    background-image: url('assets/img/top_button/top_button_02.webp');
     background-repeat: no-repeat;
     background-size: contain;
     background-color: transparent;
