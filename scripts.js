@@ -77,6 +77,9 @@ function topFunction() {
 document.addEventListener('DOMContentLoaded', function () {
     const links = document.querySelectorAll('.pagination-nav a');
 
+    // Set initial active link
+    document.querySelector('.pagination-nav a[href="#part1"]').classList.add('active');
+
     // Add smooth scrolling behavior
     links.forEach(link => {
         link.addEventListener('click', function (e) {
@@ -87,10 +90,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 top: targetElement.offsetTop - 10, // Adjust offset as needed
                 behavior: 'smooth'
             });
+            // Remove active class from all links
+            links.forEach(link => link.classList.remove('active'));
+            // Add active class to the clicked link
+            this.classList.add('active');
         });
     });
 
-    // Highlight active link
+    // Highlight active link on scroll
     window.addEventListener('scroll', function () {
         let fromTop = window.scrollY + 20;
 
@@ -105,5 +112,124 @@ document.addEventListener('DOMContentLoaded', function () {
                 link.classList.remove('active');
             }
         });
+
+        // Check if we are at the bottom of the page to highlight the last section
+        const lastLink = links[links.length - 1];
+        const lastSection = document.querySelector(lastLink.getAttribute('href'));
+        if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 2) {
+            links.forEach(link => link.classList.remove('active'));
+            lastLink.classList.add('active');
+        }
     });
+});
+
+
+
+/*--- PRESTATIONS SLIDES ---*/
+
+document.addEventListener('DOMContentLoaded', function () {
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const nextButton = document.querySelector('.carousel-button-right');
+    const prevButton = document.querySelector('.carousel-button-left');
+    const pagination = document.querySelector('.carousel-pagination');
+    let currentSlideIndex = 0;
+    let autoSlideInterval;
+
+    // Arrange the slides next to one another
+    slides.forEach((slide, index) => {
+        slide.style.left = index * 100 + '%';
+    });
+
+    // Create pagination dots
+    const createPagination = () => {
+        pagination.innerHTML = ''; // Clear existing pagination to avoid duplication
+        slides.forEach((_, index) => {
+            const button = document.createElement('button');
+            if (index === 0) button.classList.add('active');
+            pagination.appendChild(button);
+            button.addEventListener('click', () => {
+                moveToSlide(currentSlideIndex, index);
+                updatePagination(index);
+                currentSlideIndex = index;
+            });
+        });
+    };
+
+    const moveToSlide = (fromIndex, toIndex) => {
+        track.style.transform = 'translateX(-' + toIndex * 100 + '%)';
+        slides[fromIndex].classList.remove('current-slide');
+        slides[toIndex].classList.add('current-slide');
+        animateImages(slides[toIndex]);
+    };
+
+    const updatePagination = (index) => {
+        const buttons = Array.from(pagination.children);
+        buttons.forEach(button => button.classList.remove('active'));
+        buttons[index].classList.add('active');
+    };
+
+    const animateImages = (slide) => {
+        const images = slide.querySelectorAll('img');
+        images.forEach((img, index) => {
+            img.classList.remove('show');
+            img.style.animation = 'none';
+            // Force reflow
+            img.offsetHeight;
+            img.style.animation = `fadeIn 1s ${index * 0.5}s ease-in-out forwards`;
+            setTimeout(() => {
+                img.classList.add('show');
+            }, index * 1000);
+        });
+    };
+
+    nextButton.addEventListener('click', () => {
+        const nextIndex = (currentSlideIndex + 1) % slides.length;
+        moveToSlide(currentSlideIndex, nextIndex);
+        updatePagination(nextIndex);
+        currentSlideIndex = nextIndex;
+    });
+
+    prevButton.addEventListener('click', () => {
+        const prevIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+        moveToSlide(currentSlideIndex, prevIndex);
+        updatePagination(prevIndex);
+        currentSlideIndex = prevIndex;
+    });
+
+    const startAutoSlide = () => {
+        autoSlideInterval = setInterval(() => {
+            const nextIndex = (currentSlideIndex + 1) % slides.length;
+            moveToSlide(currentSlideIndex, nextIndex);
+            updatePagination(nextIndex);
+            currentSlideIndex = nextIndex;
+        }, 8000); // Adjusted interval for smoother transitions
+    };
+
+    const stopAutoSlide = () => {
+        clearInterval(autoSlideInterval);
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                startAutoSlide();
+            } else {
+                stopAutoSlide();
+            }
+        });
+    }, {
+        threshold: 0.5
+    });
+
+    observer.observe(document.getElementById('part3'));
+
+    document.querySelector('.carousel').addEventListener('mouseover', stopAutoSlide);
+    document.querySelector('.carousel').addEventListener('mouseout', startAutoSlide);
+
+    // Initial call to animate the images in the current slide
+    animateImages(slides[currentSlideIndex]);
+
+    // Initial call to create pagination
+    createPagination();
 });

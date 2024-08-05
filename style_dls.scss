@@ -265,6 +265,7 @@ p {
 
 .description_hero {
     text-align: center;
+    margin-top: -50px;
 }
 
 .description_hero p,
@@ -285,13 +286,13 @@ h2 {
     color: transparent;
     /* Remplit le texte avec la couleur du fond standard */
     text-align: center;
+    margin: 0;
 }
 
 
 /*--- SECTION PRÉSENTATION ---*/
 
 .presentation {
-    height: 200px;
     padding: 100px 400px 100px 400px;
 }
 
@@ -302,234 +303,276 @@ h2 {
 
 /*--- SECTION SERVICES PROPOSÉS ---*/
 
-.services_proposes {
-    color: #FFFFFF;
-    justify-content: center;
-    align-items: center;
+.green-check {
+    color: green;
+}
+
+.mes_prestations {
+    padding: 50px;
     text-align: center;
-    padding: 50px 50px 100px 50px;
-    background-color: #00000072;
 }
 
-.services_proposes h3 {
+.mes_prestations h3 {
+    font-size: 36px;
+    margin-bottom: 20px;
     color: #FFFFFF;
-    font-size: 30px;
-    text-align: left;
-    padding-left: 350px;
 }
 
-.mes_services {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
+.mes_prestations h4 {
+    font-size: 25px;
+    margin: 0;
+    text-align: center;
+}
+
+.carousel {
+    position: relative;
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.carousel-track-container {
+    overflow: hidden;
     width: 100%;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.8s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.prestation_description {
+    width: 30%;
+    padding: 50px;
+    background-color: #0000006c;
+    color: #FFFFFF;
+    border: 2px solid #F9E1A6;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.images_deco_gauche,
+.images_deco_droit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 30%;
     gap: 20px;
 }
 
-.services_1_2,
-.services_3_4 {
+.images_deco_gauche img,
+.images_deco_droit img {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 1s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.images_deco_gauche img.show,
+.images_deco_droit img.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.bouton_prestation {
     display: flex;
-    justify-content: space-between;
-    width: 100%;
+    justify-content: center;
+    gap: 20px;
 }
 
-.service {
+.carousel-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.carousel-button {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    margin: 0 5px;
+    z-index: 10;
+}
+
+.carousel-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-pagination button {
+    background-color: transparent;
+    width: 15px;
+    height: 15px;
+    rotate: 45deg;
+    border: 2px solid #F9E1A6;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-pagination button.active {
+    background-color: #AC529C;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    80% {
+        transform: scale(1.3);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/*--- TEST DERNIERS PROJETS ---*/
+
+.derniers_projets {
+    display: flex;
+    flex-direction: column;
     text-align: center;
-    width: 49.5%;
-    height: auto;
-    border: 1px solid #F9E1A6;
-    border-radius: 10px;
-}
-
-
-/*--- SECTION DERNIERS PROJETS ---*/
-
-.dernier_projet {
+    justify-content: center;
+    align-items: center;
     padding: 100px 400px;
 }
 
-.dernier_projet h3 {
-    color: #FFFFFF;
-    font-size: 30px;
+.bouton_dernier_projet a {
+    color: #AC529C;
+    height: 33, 33%;
+    width: 100%;
 }
 
-.derniers_projets_grid {
-    margin: auto;
+.derniers_projets h4 {
+    font-size: 30px;
+    color: #F9E1A6;
+    margin: 0;
+    width: 100%;
+    height: 33, 33%;
+}
+
+.tag {
+    height: 33, 33%;
+    width: 100%;
+}
+
+
+.image_projets {
+    border: 2px solid #F9E1A6;
+    border-radius: 15px;
+    padding: 0;
+    margin: 0;
+    width: 15vw;
+    height: 15vw;
+    position: relative;
+}
+
+.image_projets img {
+    width: 15vw;
+    height: 15vw;
+    border-radius: 15px;
+}
+
+.ligne1,
+.ligne2 {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.ligne2 {
     flex-direction: row;
-    flex-wrap: wrap;
-    width: 900px;
-    height: 670px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 270px 100px;
-    grid-auto-flow: row;
-    grid-template-areas:
-        ". project-1 project-1 ."
-        "project-2 project-2 project-3 project-3"
-        ". project-4 project-4 .";
-
-    .dernier_projet_1 {
-        width: 400px;
-        height: auto;
-        justify-content: center;
-        grid-area: 1 / 2 / 3 / 4;
-    }
-
-    .dernier_projet_2 {
-        width: 400px;
-        height: auto;
-        grid-area: 2 / 1 / 4 / 3;
-    }
-
-    .dernier_projet_3 {
-        width: 400px;
-        height: auto;
-        grid-area: 2 / 3 / 4 / 5;
-    }
-
-    .button_last_projet {
-        height: 45px;
-        display: flex;
-        margin-top: 90px;
-        justify-content: center;
-        align-items: end;
-        grid-area: 3 / 2 / 5 / 4;
-    }
-
-    .button_last_projet a {
-        color: black;
-    }
+    gap: 230px;
+    margin-top: -40px;
 }
 
 .derniers_projets h3 {
     color: #FFFFFF;
     font-size: 30px;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 100px;
 }
 
-.derniers_projets_grid img {
-    width: 400px;
-    background-size: cover;
-    cursor: pointer;
-    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+.content-default {
+    padding: 0;
+    margin: 0;
 }
 
-.content-default-1,
-.content-hover-1,
-.content-default-2,
-.content-hover-2,
-.content-default-3,
-.content-hover-3 {
+.content-hover {
+    opacity: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid #F9E1A6;
+    border-radius: 15px;
+    padding: 0;
     position: absolute;
-    width: 400px;
-    height: 400px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 15vw;
+    height: 15vw;
+}
+
+.container_hover {
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
-    transition: opacity 0.3s ease;
+    rotate: -45deg;
 }
 
-.dernier_projet_vignette {
+.miniature_projet {
+    rotate: 45deg;
     position: relative;
-    width: 400px;
-    height: 400px;
 }
 
-.content-hover-1,
-.content-hover-2,
-.content-hover-3 {
-    opacity: 0;
-    z-index: 1;
-    background-color: rgba(0, 0, 0, 0.7);
+.miniature_projet:hover .content-hover {
+    opacity: 1;
+    z-index: 10;
 }
 
-.content-hover-3::before {
+.miniature_projet:hover .content-default {
+    opacity: 0.5;
+}
+
+.miniature_projet:hover .content-hover::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    clip-path: inherit;
-    /* Hérite du clip-path de l'élément parent */
-    border: 2px solid #000;
-    /* Bordure noire */
     box-sizing: border-box;
-    /* Inclut la bordure dans les dimensions de l'élément */
     pointer-events: none;
-    /* Assure que les événements de la souris passent à travers */
 }
 
-.content-hover-1 h4,
-.content-hover-2 h4,
-.content-hover-3 h4 {
-    font-size: 30px;
-}
-
-.content-hover-1 a,
-.content-hover-2 a,
-.content-hover-3 a {
-    color: #AC529C;
-}
-
-.dernier_projet_vignette:hover .content-hover-1,
-.dernier_projet_vignette:hover .content-hover-2,
-.dernier_projet_vignette:hover .content-hover-3 {
-    opacity: 1;
-    z-index: 0;
-}
-
-.dernier_projet_vignette:hover .content-default-1,
-.dernier_projet_vignette:hover .content-default-2,
-.dernier_projet_vignette:hover .content-default-3 {
-    opacity: 0.5;
-}
-
-.tag,
-.bouton_dernier_projet {
-    height: 35%;
-    color: #FFFFFF;
-    display: flex;
-    align-items: center;
-}
-
-.titre_projet {
-    height: 10%;
-    color: #F9E1A6;
-    display: flex;
-    align-items: center;
-}
-
-
-
-/*--- SECTIONS CLIENTS ---*/
-
-.clients {
-    color: #FFFFFF;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 100px 400px 100px 400px;
-    background-color: #000;
-}
-
-.clients img {
-    height: 100px;
-    width: auto;
-}
-
-.clients h3 {
-    font-size: 30px;
-    text-align: left;
-}
-
-.clients a {
-    color: #F9E1A6;
-}
 
 /*--- SECTIONS CONTACT ---*/
 
