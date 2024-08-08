@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .filter-buttons {
   margin: 20px 0;
   padding-bottom: 20px;
@@ -215,32 +216,6 @@
 }
 
 /*------------------------------------*/
-.projet_vignette {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 300px;
-  height: 300px;
-}
-
-.projet_vignette > img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  filter: grayscale(50%);
-  -webkit-clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
-          clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
-  cursor: pointer;
-  transition: 0.2s linear;
-}
-
-.projet_vignette > img:hover {
-  filter: grayscale(0%);
-  transform: scale(1.15);
-}
-
 .portfolio {
   display: flex;
   flex-direction: row;
@@ -250,4 +225,88 @@
   justify-content: center;
   padding-top: 50px;
   padding-bottom: 100px;
+}
+
+.projet_vignette {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+  position: relative;
+  -webkit-clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+          clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+  padding: 2px;
+}
+
+.projet_vignette:hover {
+  -webkit-clip-path: none;
+          clip-path: none;
+}
+
+.projet_vignette > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  filter: grayscale(90%);
+  transition: 0.2s linear;
+  -webkit-clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+          clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+}
+
+.projet_vignette > a:hover {
+  filter: grayscale(0%);
+  transform: scale(1.15);
+  z-index: 97;
+}
+
+.projet_vignette > img {
+  max-width: 100%;
+  max-height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  filter: grayscale(80%);
+  cursor: pointer;
+  transition: 0.2s linear;
+}
+
+.projet_vignette > img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.15);
+}
+
+.infobulle {
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.861);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 30px;
+  position: absolute;
+  top: 70%;
+  z-index: 98;
+  opacity: 0;
+  transition: opacity 0.3s;
+  border: 2px solid #F9E1A6;
+}
+
+.infobulle::after {
+  content: "";
+  position: absolute;
+  top: 150%;
+  /* Positionne la flèche en bas de l'infobulle */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  rotate: 180deg;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+.info:hover .infobulle {
+  visibility: visible;
+  opacity: 1;
 }/*# sourceMappingURL=style_dls_portfolio.css.map */

@@ -197,35 +197,7 @@ document.addEventListener('DOMContentLoaded', function () {
         currentSlideIndex = prevIndex;
     });
 
-    const startAutoSlide = () => {
-        autoSlideInterval = setInterval(() => {
-            const nextIndex = (currentSlideIndex + 1) % slides.length;
-            moveToSlide(currentSlideIndex, nextIndex);
-            updatePagination(nextIndex);
-            currentSlideIndex = nextIndex;
-        }, 8000); // Adjusted interval for smoother transitions
-    };
 
-    const stopAutoSlide = () => {
-        clearInterval(autoSlideInterval);
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                startAutoSlide();
-            } else {
-                stopAutoSlide();
-            }
-        });
-    }, {
-        threshold: 0.5
-    });
-
-    observer.observe(document.getElementById('part3'));
-
-    document.querySelector('.carousel').addEventListener('mouseover', stopAutoSlide);
-    document.querySelector('.carousel').addEventListener('mouseout', startAutoSlide);
 
     // Initial call to animate the images in the current slide
     animateImages(slides[currentSlideIndex]);
